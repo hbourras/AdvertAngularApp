@@ -1,0 +1,28 @@
+<h2>Seller list <span class="badge bg-primary">{{sellers.length}}</span></h2>
+<div class="clearfix">
+    <a class="float-end" href=""><i class="fa fa-plus me-1"></i>Créer</a>
+</div>
+<hr>
+<table class="table table-stripped table-hover">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>fistname</th>
+            <th>Lastname</th>
+            <th>Email</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let seller of sellers">
+            <td>{{seller.civility}}</td>
+            <td>{{seller.firstname | titlecase}}</td>
+            <td>{{seller.lastname | uppercase}}</td>
+            <td>{{seller.email | lowercase}}</td>
+            <td class="text-right">
+                <button type="button" class="btn btn-sm btn-primary me-1"><i class="fas fa-eye"></i></button>
+                <button type="button" class="btn btn-sm btn-danger me-1"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

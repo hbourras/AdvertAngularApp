@@ -1,0 +1,28 @@
+<h2>Advert list <span class="badge bg-primary">{{adverts.length}}</span></h2>
+<div class="clearfix">
+    <a class="float-end" href=""><i class="fa fa-plus me-1"></i>Créer</a>
+</div>
+<hr>
+<table class="table table-stripped table-hover">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ad of adverts">
+            <td>{{ad.creationDate | date:'dd/MM/yyyy HH:mm:ss'}}</td>
+            <td>{{ad.title}}</td>
+            <td>{{ad.description}}</td>
+            <td>{{ad.price | currency:'EUR'}}</td>
+            <td class="text-right">
+                <button type="button" class="btn btn-sm btn-primary me-1"><i class="fas fa-eye"></i></button>
+                <button type="button" class="btn btn-sm btn-danger me-1"><i class="fa fa-trash"></i></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
